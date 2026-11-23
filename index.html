@@ -7,153 +7,230 @@
 <title>ZONA 05 | Cancha deportiva</title>
 
 <style>
-*{box-sizing:border-box}
-
-body{
-  margin:0;
-  background:#101510;
-  color:white;
-  font-family:Arial,sans-serif;
+* {
+  box-sizing: border-box;
 }
 
-header{
-  background:#17251a;
-  padding:28px 18px;
-  text-align:center;
-  border-bottom:3px solid #8bd34b;
+body {
+  margin: 0;
+  background: #101510;
+  color: white;
+  font-family: Arial, sans-serif;
 }
 
-.logo{
-  font-size:36px;
-  font-weight:900;
-  letter-spacing:5px;
-  color:#a6e66c;
+header {
+  background: #17251a;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 2px solid #8bd34b;
 }
 
-header p{color:#d2dfce}
-
-section{
-  padding:24px 17px;
-  max-width:850px;
-  margin:auto;
+header h1 {
+  margin: 0;
+  color: #a6e66c;
+  font-size: 32px;
 }
 
-h2{color:#a6e66c}
-
-.hero{
-  background:
-  linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.75)),
-  url("./84f7d49c-7746-4c53-866d-25fa2d099216.jpeg") center/cover no-repeat;
-  padding:90px 20px;
-  text-align:center;
-  min-height:380px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
+header p {
+  margin: 7px 0 0;
 }
 
-.hero h1{font-size:32px}
-
-.card{
-  background:#1b251d;
-  border:1px solid #344737;
-  border-radius:14px;
-  padding:18px;
-  margin:15px 0;
+section {
+  padding: 25px 16px;
+  max-width: 1000px;
+  margin: auto;
 }
 
-button,.whatsapp{
-  background:#8bd34b;
-  color:#10200d;
-  border:0;
-  border-radius:9px;
-  padding:12px 16px;
-  font-weight:bold;
-  cursor:pointer;
-  text-decoration:none;
-  display:inline-block;
+.hero {
+  text-align: center;
+  padding: 35px 16px;
 }
 
-.days{
-  display:flex;
-  gap:7px;
-  overflow-x:auto;
-  padding-bottom:12px;
+.hero img {
+  width: 100%;
+  max-width: 750px;
+  border-radius: 15px;
+  margin-bottom: 20px;
 }
 
-.days button{min-width:65px}
-
-.days button.active{
-  background:white;
-  color:#17251a;
+h2 {
+  color: #a6e66c;
+  text-align: center;
 }
 
-.slots{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:10px;
+.hero h2 {
+  font-size: 30px;
+  margin-bottom: 10px;
 }
 
-.slot{
-  background:#26352a;
-  color:white;
-  border:1px solid #526b52;
+p {
+  line-height: 1.5;
 }
 
-.slot.busy{
-  background:#713b35;
-  border-color:#a45a50;
+.card {
+  background: #17251a;
+  border: 1px solid #35513a;
+  border-radius: 14px;
+  padding: 18px;
+  margin: 12px 0;
 }
 
-.slot:disabled{opacity:1}
-
-.small{
-  font-size:13px;
-  color:#c4d0c1;
+button {
+  background: #8bd34b;
+  color: #101510;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 4px;
 }
 
-input{
-  width:100%;
-  padding:12px;
-  margin:8px 0;
-  border-radius:8px;
-  border:1px solid #526b52;
-  background:#101510;
-  color:white;
+button:hover {
+  background: #a6e66c;
 }
 
-.gallery{
-  border:2px dashed #526b52;
-  border-radius:12px;
-  padding:25px;
-  text-align:center;
+button:disabled {
+  opacity: .5;
+  cursor: not-allowed;
 }
 
-.gallery img{
-  max-width:100%;
-  border-radius:10px;
-  margin-top:12px;
+input {
+  background: #101510;
+  color: white;
+  border: 1px solid #8bd34b;
+  border-radius: 8px;
+  padding: 12px;
+  width: 100%;
+  margin: 8px 0;
 }
 
-footer{
-  text-align:center;
-  padding:25px;
-  color:#aab8a8;
-  background:#17251a;
+.days {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
 }
 
-.contact{margin:18px 0}
-
-.admin-row{
-  padding:12px 0;
-  border-bottom:1px solid #526b52;
+.day-button {
+  min-width: 90px;
 }
 
-.admin-row button{margin-top:7px}
+.day-button.active {
+  background: white;
+  color: #101510;
+}
 
-@media(min-width:600px){
-  .slots{grid-template-columns:repeat(3,1fr)}
+.schedule {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.slot {
+  padding: 15px 8px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  background: #263d29;
+  border: 1px solid #527c43;
+}
+
+.slot.free {
+  color: #a6e66c;
+}
+
+.slot.busy {
+  color: #ff8b8b;
+  background: #402323;
+  border-color: #8b4141;
+}
+
+.slot button {
+  display: block;
+  width: 100%;
+  margin: 8px 0 0;
+  font-size: 12px;
+}
+
+.contact {
+  text-align: center;
+  margin: 12px 0;
+  padding: 15px;
+  background: #17251a;
+  border-radius: 12px;
+}
+
+.whatsapp {
+  color: #a6e66c;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 8px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 10px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.admin {
+  border: 1px solid #8bd34b;
+  border-radius: 14px;
+  padding: 18px;
+  background: #17251a;
+}
+
+.admin-list {
+  margin-top: 15px;
+}
+
+.admin-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-bottom: 1px solid #35513a;
+  flex-wrap: wrap;
+}
+
+.status {
+  color: #a6e66c;
+  font-size: 14px;
+}
+
+.error {
+  color: #ff9999;
+}
+
+footer {
+  background: #17251a;
+  text-align: center;
+  padding: 25px;
+  margin-top: 30px;
+  border-top: 2px solid #8bd34b;
+}
+
+a {
+  overflow-wrap: anywhere;
+}
+
+@media(max-width: 500px) {
+  .hero h2 {
+    font-size: 25px;
+  }
+  .day-button {
+    min-width: 75px;
+    padding: 10px;
+  }
 }
 </style>
 </head>
@@ -161,313 +238,413 @@ footer{
 <body>
 
 <header>
-  <div class="logo">ZONA 05</div>
+  <h1>ZONA 05</h1>
   <p>Tu espacio para jugar</p>
 </header>
 
-<div class="hero">
-  <h1>Vive el fútbol en ZONA 05</h1>
+<section class="hero">
+  <img
+    src="./84f7d49c-7746-4c53-866d-25fa2d099216.jpeg"
+    alt="Cancha deportiva ZONA 05"
+  >
+  <h2>Vive el fútbol en ZONA 05</h2>
   <p>Reserva tu espacio y disfruta del deporte de la mejor manera.</p>
-</div>
+</section>
 
 <section>
-  <h2>Información importante</h2>
+  <h2>Horarios disponibles</h2>
+  <p style="text-align:center">
+    Consulta los espacios disponibles para jugar.
+  </p>
+
+  <div class="days" id="days"></div>
+
+  <div id="scheduleMessage" class="status" style="text-align:center">
+    Cargando horarios...
+  </div>
+
+  <div class="schedule" id="schedule"></div>
+</section>
+
+<section>
+  <h2>Nuestras tarifas</h2>
+
   <div class="card">
-    <p>⚽ Alquiler de cancha: <b>₡15.000 por hora</b></p>
-    <p>👟 Alquiler de tenis: <b>₡500 por persona</b></p>
-    <p>🚫 No se permite jugar con tacos.</p>
+    <h3>Alquiler de cancha</h3>
+    <p>₡15.000 por hora</p>
+  </div>
+
+  <div class="card">
+    <h3>Alquiler de tenis</h3>
+    <p>₡500 por persona</p>
+    <p>No se permite jugar con tacos.</p>
   </div>
 </section>
 
 <section>
   <h2>Nuestra galería</h2>
-  <div class="gallery">
-    <p>Fotografías de ZONA 05</p>
-    <input type="file" id="photos" accept="image/*" multiple>
-    <div id="gallery"></div>
-  </div>
-  <p class="small">Las fotografías seleccionadas se muestran temporalmente.</p>
+  <p style="text-align:center">
+    Comparte y disfruta los momentos de ZONA 05.
+  </p>
+
+  <input type="file" id="photoInput" accept="image/*" multiple>
+  <div class="gallery" id="gallery"></div>
 </section>
 
 <section>
-  <h2>Horarios disponibles</h2>
-  <p class="small">Selecciona un día para consultar los horarios.</p>
-  <div class="days" id="days"></div>
-  <div class="card">
-    <h3 id="selectedDay"></h3>
-    <div class="slots" id="slots"></div>
-    <p class="small">Verde: disponible · Rojo: ocupado</p>
-    <p class="small" id="schedule-message">Cargando horarios...</p>
+  <h2>Reserva con nosotros</h2>
+  <p style="text-align:center">
+    Para reservar, comunícate con cualquiera de nuestros contactos.
+  </p>
+
+  <div class="contact">
+    <b>WhatsApp principal</b><br>
+    <a class="whatsapp"
+       href="https://wa.me/50672295376"
+       target="_blank">
+      7229-5376
+    </a>
+  </div>
+
+  <div class="contact">
+    <b>Jeffry</b><br>
+    <a class="whatsapp"
+       href="https://wa.me/50688665592"
+       target="_blank">
+      8866-5592
+    </a>
+  </div>
+
+  <div class="contact">
+    <b>Fabiola</b><br>
+    <a class="whatsapp"
+       href="https://wa.me/50672358920"
+       target="_blank">
+      7235-8920
+    </a>
   </div>
 </section>
 
 <section>
-  <h2>Reserva por WhatsApp</h2>
-  <div class="card">
-    <p>Comunícate con nosotros para reservar tu espacio.</p>
-
-    <div class="contact">
-  <b>WhatsApp principal</b><br>
-  <a class="whatsapp" href="https://wa.me/50672295376" target="_blank">
-    7229-5376
-  </a>
-</div>
-    <div class="contact">
-      <b>Jeffry</b><br>
-      <a class="whatsapp" href="https://wa.me/50688665592" target="_blank">8866-5592</a>
-    </div>
-
-    <div class="contact">
-      <b>Fabiola</b><br>
-      <a class="whatsapp" href="https://wa.me/50672358920" target="_blank">7235-8920</a>
-    </div>
+  <h2>Ubicación</h2>
+  <div class="card" style="text-align:center">
+    <p>Encuéntranos y ven a disfrutar del fútbol.</p>
+    <a class="whatsapp"
+       href="https://maps.apple/p/KI5ZBJTjZ.M5Xj"
+       target="_blank">
+      Ver ubicación de ZONA 05
+    </a>
   </div>
 </section>
 
 <section>
-  <h2>Síguenos en Instagram</h2>
-  <div class="card">
+  <h2>Síguenos</h2>
+  <div class="contact">
     <a class="whatsapp"
        href="https://www.instagram.com/z5_futbol?cnvx=N3dldWM1YzlkMDAz"
        target="_blank">
-       Instagram @z5_futbol
+      Instagram @z5_futbol
     </a>
   </div>
 </section>
 
 <section>
-  <h2>📍 ¿Dónde estamos?</h2>
-  <div class="card" style="text-align:center">
-    <h3>FÚTBOL 5 ZONA 05</h3>
-    <p>¡Ven a disfrutar del fútbol con nosotros!</p>
-    <a class="whatsapp"
-       href="https://maps.apple/p/KI5ZBJTjZ.M5Xj"
-       target="_blank"
-       rel="noopener">
-       CÓMO LLEGAR
-    </a>
-  </div>
-</section>
+  <h2>Administración de horarios</h2>
 
-<section id="admin-panel">
-  <div class="card">
-    <h2>Administración ZONA 05</h2>
+  <div class="admin">
     <p>Ingresa tu PIN para administrar los horarios.</p>
 
     <input
-      id="admin-pin"
       type="password"
+      id="adminPin"
+      placeholder="PIN de administración"
       inputmode="numeric"
       maxlength="4"
-      placeholder="PIN de 4 dígitos"
     >
 
-    <button id="admin-login" onclick="entrarAdmin()">
-      Entrar
+    <button onclick="entrarAdmin()">Entrar</button>
+    <button onclick="salirAdmin()" id="logoutButton" hidden>
+      Cerrar sesión
     </button>
 
-    <p id="admin-message"></p>
-    <div id="admin-horarios"></div>
+    <p id="adminMessage" class="status"></p>
+    <div id="adminList" class="admin-list"></div>
   </div>
 </section>
 
 <footer>
-  <p><b>ZONA 05</b></p>
+  <h2>ZONA 05</h2>
   <p>¡Nos vemos en la cancha!</p>
 </footer>
-
-<script>
-const days = [
-  "Lunes","Martes","Miércoles","Jueves",
-  "Viernes","Sábado","Domingo"
-];
-
-let selected = 0;
-const occupied = {};
-
-const daysBox = document.getElementById("days");
-const slotsBox = document.getElementById("slots");
-
-days.forEach((day,i)=>{
-  const b = document.createElement("button");
-  b.textContent = day.slice(0,3);
-  b.onclick = ()=>showDay(i);
-  daysBox.appendChild(b);
-});
-
-function showDay(i){
-  selected = i;
-
-  document.querySelectorAll(".days button").forEach((b,j)=>{
-    b.classList.toggle("active",i===j);
-  });
-
-  document.getElementById("selectedDay").textContent = days[i];
-  slotsBox.innerHTML = "";
-
-  const start = i===6 ? 10 : 16;
-
-  for(let h=start;h<22;h++){
-    const time = (h>12?h-12:h)+":00 "+(h>=12?"PM":"AM");
-    const key = i+"-"+h;
-
-    const b = document.createElement("button");
-    b.className = "slot";
-
-    if(occupied[key]){
-      b.classList.add("busy");
-      b.textContent = time+" · Ocupado";
-      b.disabled = true;
-    }else{
-      b.textContent = time+" · Disponible";
-      b.onclick = ()=>{
-        document.querySelectorAll(".slot").forEach(x=>{
-          x.style.outline="none";
-        });
-        b.style.outline="3px solid white";
-      };
-    }
-
-    slotsBox.appendChild(b);
-  }
-}
-
-document.getElementById("photos").onchange = function(){
-  const box = document.getElementById("gallery");
-  box.innerHTML = "";
-
-  [...this.files].forEach(file=>{
-    const img = document.createElement("img");
-    img.src = URL.createObjectURL(file);
-    box.appendChild(img);
-  });
-};
-
-showDay(0);
-</script>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script>
-const SUPABASE_URL = "https://efmwmiyigbmvordpdoli.supabase.co";
-const SUPABASE_KEY = "sb_publishable_aUAT1DUgCFUGInzr8AgdVw_qMxxN2TJ";
+const SUPABASE_URL =
+  "https://efmwmiyigbmvordpdoli.supabase.co";
+
+const SUPABASE_KEY =
+  "sb_publishable_aUAT1DUgCFUGInzr8AgdVw_qMxxN2TJ";
+
+const FUNCTION_NAME = "smooth-endpoint";
+
+const days = [
+  "Lunes",
+  "Martes",
+  "Miércoles",
+  "Jueves",
+  "Viernes",
+  "Sábado",
+  "Domingo"
+];
+
+let selectedDay = "Lunes";
+let horarios = [];
+let adminActivo = false;
+let pinAdmin = "";
 
 window.db = window.supabase.createClient(
   SUPABASE_URL,
   SUPABASE_KEY
 );
 
-async function cargarHorarios(){
-  const mensaje = document.getElementById("schedule-message");
+const daysContainer = document.getElementById("days");
+const scheduleContainer = document.getElementById("schedule");
+const scheduleMessage = document.getElementById("scheduleMessage");
+const adminMessage = document.getElementById("adminMessage");
+const adminList = document.getElementById("adminList");
 
-  const {data,error} = await window.db
-    .from("Horarios")
-    .select("id,dia,hora,ocupado");
+function crearDias() {
+  daysContainer.innerHTML = "";
 
-  if(error){
-    console.error(error);
-    mensaje.textContent = "No se pudieron cargar los horarios.";
-    return;
-  }
+  days.forEach(dia => {
+    const button = document.createElement("button");
 
-  Object.keys(occupied).forEach(k=>delete occupied[k]);
+    button.textContent = dia;
+    button.className =
+      "day-button" + (dia === selectedDay ? " active" : "");
 
-  data.forEach(h=>{
-    const dayIndex = days.indexOf(h.dia);
-    if(dayIndex !== -1){
-      occupied[dayIndex+"-"+Number(h.hora)] = h.ocupado;
-    }
-  });
-
-  showDay(selected);
-  mensaje.textContent = "Horarios actualizados.";
-}
-
-async function entrarAdmin(){
-  const pin = document.getElementById("admin-pin").value;
-  const mensaje = document.getElementById("admin-message");
-  const lista = document.getElementById("admin-horarios");
-  const login = document.getElementById("admin-login");
-
-  if(!/^\d{4}$/.test(pin)){
-    mensaje.textContent = "Escribe un PIN de 4 dígitos.";
-    return;
-  }
-
-  login.disabled = true;
-  mensaje.textContent = "Cargando horarios...";
-  lista.innerHTML = "";
-
-  const {data,error} = await window.db
-    .from("Horarios")
-    .select("id,dia,hora,ocupado")
-    .order("id");
-
-  login.disabled = false;
-
-  if(error){
-    console.error(error);
-    mensaje.textContent = "No se pudieron cargar los horarios.";
-    return;
-  }
-
-  if(!data || data.length === 0){
-    mensaje.textContent = "No hay horarios registrados.";
-    return;
-  }
-
-  mensaje.textContent = "Selecciona un horario para cambiar su estado.";
-
-  data.forEach(h=>{
-    const fila = document.createElement("div");
-    fila.className = "admin-row";
-
-    const texto = document.createElement("div");
-    texto.textContent =
-      h.dia+" - "+h.hora+":00 | "+
-      (h.ocupado ? "Ocupado" : "Disponible");
-
-    const boton = document.createElement("button");
-    boton.textContent = h.ocupado ? "Liberar horario" : "Marcar ocupado";
-
-    boton.onclick = async ()=>{
-      boton.disabled = true;
-      mensaje.textContent = "Guardando cambio...";
-
-      const {error} = await window.db.functions.invoke(
-        "administrar-horarios",
-        {
-          body:{
-            pin:pin,
-            id:h.id,
-            ocupado:!h.ocupado
-          }
-        }
-      );
-
-      if(error){
-        console.error(error);
-        mensaje.textContent =
-          "No se pudo actualizar. Revisa el PIN y la función.";
-        boton.disabled = false;
-        return;
-      }
-
-      mensaje.textContent = "Horario actualizado correctamente.";
-
-      await cargarHorarios();
-      await entrarAdmin();
+    button.onclick = () => {
+      selectedDay = dia;
+      crearDias();
+      mostrarHorarios();
     };
 
-    fila.appendChild(texto);
-    fila.appendChild(boton);
-    lista.appendChild(fila);
+    daysContainer.appendChild(button);
   });
 }
 
+function mostrarHorarios() {
+  scheduleContainer.innerHTML = "";
+
+  const delDia = horarios
+    .filter(h => h.dia === selectedDay)
+    .sort((a, b) => Number(a.hora) - Number(b.hora));
+
+  if (!delDia.length) {
+    scheduleMessage.textContent =
+      "No hay horarios registrados para este día.";
+    return;
+  }
+
+  scheduleMessage.textContent = "";
+
+  delDia.forEach(h => {
+    const ocupado = h.ocupado === true;
+
+    const div = document.createElement("div");
+    div.className = "slot " + (ocupado ? "busy" : "free");
+
+    const hora = Number(h.hora);
+    const horaTexto =
+      String(hora).padStart(2, "0") + ":00";
+
+    div.innerHTML = `
+      <div>${horaTexto}</div>
+      <div>${ocupado ? "OCUPADO" : "DISPONIBLE"}</div>
+    `;
+
+    scheduleContainer.appendChild(div);
+  });
+}
+
+async function cargarHorarios() {
+  scheduleMessage.textContent = "Cargando horarios...";
+  scheduleMessage.className = "status";
+
+  try {
+    const { data, error } = await window.db
+      .from("Horarios")
+      .select("id,dia,hora,ocupado");
+
+    if (error) throw error;
+
+    horarios = data || [];
+
+    mostrarHorarios();
+
+    if (adminActivo) {
+      mostrarAdmin();
+    }
+
+  } catch (error) {
+    console.error("Error al cargar horarios:", error);
+
+    scheduleMessage.textContent =
+      "No se pudieron cargar los horarios. Revisa la conexión con Supabase.";
+
+    scheduleMessage.className = "error";
+  }
+}
+
+async function entrarAdmin() {
+  const pin = document.getElementById("adminPin").value.trim();
+
+  if (!/^\d{4}$/.test(pin)) {
+    adminMessage.textContent =
+      "Escribe un PIN de cuatro dígitos.";
+    adminMessage.className = "error";
+    return;
+  }
+
+  pinAdmin = pin;
+  adminActivo = true;
+
+  document.getElementById("logoutButton").hidden = false;
+  document.getElementById("adminPin").disabled = true;
+
+  adminMessage.textContent =
+    "Panel abierto. Puedes modificar los horarios.";
+  adminMessage.className = "status";
+
+  await cargarHorarios();
+  mostrarAdmin();
+}
+
+function salirAdmin() {
+  adminActivo = false;
+  pinAdmin = "";
+
+  document.getElementById("adminPin").value = "";
+  document.getElementById("adminPin").disabled = false;
+  document.getElementById("logoutButton").hidden = true;
+
+  adminList.innerHTML = "";
+  adminMessage.textContent = "Sesión cerrada.";
+  adminMessage.className = "status";
+}
+
+function mostrarAdmin() {
+  if (!adminActivo) return;
+
+  adminList.innerHTML = "";
+
+  const ordenados = [...horarios].sort((a, b) => {
+    const diaA = days.indexOf(a.dia);
+    const diaB = days.indexOf(b.dia);
+
+    if (diaA !== diaB) return diaA - diaB;
+
+    return Number(a.hora) - Number(b.hora);
+  });
+
+  ordenados.forEach(h => {
+    const div = document.createElement("div");
+    div.className = "admin-item";
+
+    const horaTexto =
+      String(Number(h.hora)).padStart(2, "0") + ":00";
+
+    const texto = document.createElement("span");
+    texto.textContent =
+      h.dia + " · " + horaTexto + " · " +
+      (h.ocupado ? "Ocupado" : "Disponible");
+
+    const button = document.createElement("button");
+    button.textContent =
+      h.ocupado ? "Liberar" : "Ocupar";
+
+    button.onclick = () => cambiarHorario(h, button);
+
+    div.appendChild(texto);
+    div.appendChild(button);
+
+    adminList.appendChild(div);
+  });
+}
+
+async function cambiarHorario(h, button) {
+  if (!adminActivo || !pinAdmin) {
+    adminMessage.textContent = "Ingresa al panel primero.";
+    adminMessage.className = "error";
+    return;
+  }
+
+  button.disabled = true;
+  adminMessage.textContent = "Guardando cambio...";
+  adminMessage.className = "status";
+
+  try {
+    const { data, error } =
+      await window.db.functions.invoke(FUNCTION_NAME, {
+        body: {
+          pin: pinAdmin,
+          id: h.id,
+          ocupado: !h.ocupado
+        }
+      });
+
+    if (error) {
+      console.error("Error de la función:", error);
+      throw new Error(
+        "No se pudo conectar con la función de administración."
+      );
+    }
+
+    if (!data || !data.success) {
+      throw new Error(
+        data?.error || "No se pudo actualizar el horario."
+      );
+    }
+
+    adminMessage.textContent = "¡Horario actualizado correctamente!";
+    adminMessage.className = "status";
+
+    await cargarHorarios();
+
+  } catch (error) {
+    console.error("Error al modificar horario:", error);
+
+    adminMessage.textContent =
+      error.message || "No se pudo realizar la función. Revisa el PIN y la función.";
+
+    adminMessage.className = "error";
+
+  } finally {
+    button.disabled = false;
+  }
+}
+
+document.getElementById("photoInput").addEventListener(
+  "change",
+  function(event) {
+    const gallery = document.getElementById("gallery");
+
+    Array.from(event.target.files).forEach(file => {
+      if (!file.type.startsWith("image/")) return;
+
+      const image = document.createElement("img");
+      image.src = URL.createObjectURL(file);
+      image.alt = "Foto de ZONA 05";
+
+      gallery.appendChild(image);
+    });
+  }
+);
+
+crearDias();
 cargarHorarios();
 </script>
 
 </body>
 </html>
-
