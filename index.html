@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ZONA 05 | Cancha deportiva</title>
+
+<style>
+
+*{box-sizing:border-box}
+
+body{margin:0;background:#101510;color:white;font-family:Arial,sans-serif}
+
+header{background:#17251a;padding:28px 18px;text-align:center;border-bottom:3px solid #8bd34b}
+
+.logo{font-size:36px;font-weight:900;letter-spacing:5px;color:#a6e66c}
+
+header p{color:#d2dfce}
+
+section{padding:24px 17px;max-width:850px;margin:auto}
+
+h2{color:#a6e66c}
+
+.hero{background:linear-gradient(135deg,#243d29,#101510);padding:40px 20px;text-align:center}
+
+.hero h1{font-size:32px}
+
+.price{font-size:27px;font-weight:bold;color:#a6e66c}
+
+.card{background:#1b251d;border:1px solid #344737;border-radius:14px;padding:18px;margin:15px 0}
+
+button,.whatsapp{background:#8bd34b;color:#10200d;border:0;border-radius:9px;padding:12px 16px;font-weight:bold;cursor:pointer;text-decoration:none;display:inline-block}
+
+.days{display:flex;gap:7px;overflow-x:auto;padding-bottom:12px}
+
+.days button{min-width:65px}
+
+.days button.active{background:white;color:#17251a}
+
+.slots{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+
+.slot{background:#26352a;color:white;border:1px solid #526b52}
+
+.slot.busy{background:#713b35;border-color:#a45a50}
+
+.slot:disabled{opacity:1}
+
+.small{font-size:13px;color:#c4d0c1}
+
+input{width:100%;padding:12px;margin:8px 0;border-radius:8px;border:1px solid #526b52;background:#101510;color:white}
+
+.gallery{border:2px dashed #526b52;border-radius:12px;padding:25px;text-align:center}
+
+.gallery img{max-width:100%;border-radius:10px;margin-top:12px}
+
+footer{text-align:center;padding:25px;color:#aab8a8;background:#17251a}
+
+.contact{margin:18px 0}
+
+@media(min-width:600px){.slots{grid-template-columns:repeat(3,1fr)}}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">ZONA 05</div>
+
+<p>Tu espacio para jugar</p>
+
+</header>
+
+<div class="hero">
+
+<h1>Vive el fútbol en ZONA 05</h1>
+
+<p>Reserva tu espacio y disfruta del deporte de la mejor manera.</p>
+
+<div class="price">₡15.000 / hora</div>
+
+<p>Alquiler de tenis: ₡500 por persona</p>
+
+</div>
+
+<section>
+
+<h2>Información importante</h2>
+
+<div class="card">
+
+<p>⚽ Alquiler de cancha: <b>₡15.000 por hora</b></p>
+
+<p>👟 Alquiler de tenis: <b>₡500 por persona</b></p>
+
+<p>🚫 No se permite jugar con tacos.</p>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Nuestra galería</h2>
+
+<div class="gallery">
+
+<p>Fotografías de ZONA 05</p>
+
+<input type="file" id="photos" accept="image/*" multiple>
+
+<div id="gallery"></div>
+
+</div>
+
+<p class="small">Las imágenes seleccionadas se muestran temporalmente. Luego conectaremos el almacenamiento para que se guarden permanentemente.</p>
+
+</section>
+
+<section>
+
+<h2>Horarios disponibles</h2>
+
+<p class="small">Selecciona un día para consultar los horarios.</p>
+
+<div class="days" id="days"></div>
+
+<div class="card">
+
+<h3 id="selectedDay"></h3>
+
+<div class="slots" id="slots"></div>
+
+<p class="small">Verde: disponible · Rojo: ocupado</p>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Reserva por WhatsApp</h2>
+
+<div class="card">
+
+<p>Comunícate con nosotros para reservar tu espacio.</p>
+
+<div class="contact">
+
+<b>WhatsApp principal</b><br>
+
+<a class="whatsapp" href="https://wa.me/50672296376" target="_blank">7229-6376</a>
+
+</div>
+
+<div class="contact">
+
+<b>Jeffry</b><br>
+
+<a class="whatsapp" href="https://wa.me/50688665592" target="_blank">8866-5592</a>
+
+</div>
+
+<div class="contact">
+
+<b>Fabiola</b><br>
+
+<a class="whatsapp" href="https://wa.me/50672358920" target="_blank">7235-8920</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Síguenos en Instagram</h2>
+
+<div class="card">
+
+<a class="whatsapp" href="https://www.instagram.com/z5_futbol?cnvx=N3dldWM1YzlkMDAz" target="_blank">
+
+Instagram @z5_futbol
+
+</a>
+
+</div>
+
+</section>
+
+<footer>
+
+<p><b>ZONA 05</b></p>
+
+<p>¡Nos vemos en la cancha!</p>
+
+</footer>
+
+<script>
+
+const days=["Lunes","Martes","Miércoles","Jueves","Viernes","Sábado","Domingo"];
+
+let selected=0;
+
+const occupied={};
+
+const daysBox=document.getElementById("days");
+
+const slotsBox=document.getElementById("slots");
+
+days.forEach((day,i)=>{
+
+let b=document.createElement("button");
+
+b.textContent=day.slice(0,3);
+
+b.onclick=()=>showDay(i);
+
+daysBox.appendChild(b);
+
+});
+
+function showDay(i){
+
+selected=i;
+
+document.querySelectorAll(".days button").forEach((b,j)=>{
+
+b.classList.toggle("active",i===j);
+
+});
+
+document.getElementById("selectedDay").textContent=days[i];
+
+slotsBox.innerHTML="";
+
+let start=i===6?10:16;
+
+for(let h=start;h<22;h++){
+
+let time=(h>12?h-12:h)+":00 "+(h>=12?"PM":"AM");
+
+let key=i+"-"+h;
+
+let b=document.createElement("button");
+
+b.className="slot";
+
+if(occupied[key]){
+
+b.classList.add("busy");
+
+b.textContent=time+" · Ocupado";
+
+b.disabled=true;
+
+}else{
+
+b.textContent=time+" · Disponible";
+
+b.onclick=()=>{
+
+document.querySelectorAll(".slot").forEach(x=>x.style.outline="none");
+
+b.style.outline="3px solid white";
+
+};
+
+}
+
+slotsBox.appendChild(b);
+
+}
+
+}
+
+document.getElementById("photos").onchange=function(){
+
+const box=document.getElementById("gallery");
+
+box.innerHTML="";
+
+[...this.files].forEach(file=>{
+
+const img=document.createElement("img");
+
+img.src=URL.createObjectURL(file);
+
+box.appendChild(img);
+
+});
+
+};
+
+showDay(0);
+
+</script>
+
+</body>
+
+</html>
