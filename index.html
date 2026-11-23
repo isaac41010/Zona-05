@@ -328,12 +328,12 @@ showDay(0);
 
   const SUPABASE_KEY = "sb_publishable_aUAT1DUgCFUGInzr8AgdVw_qMxxN2TJ";
 
-  const db = window.supabase.createClient(
+  window.db = window.supabase.createClient(
     SUPABASE_URL,
     SUPABASE_KEY
   );
 
-  const { data, error } = await db
+  const { data, error } = await window.
     .from("Horarios")
     .select("dia,hora,ocupado");
 
@@ -345,6 +345,99 @@ showDay(0);
   console.log("Horarios conectados:", data);
 })();
 </script>
+  
+<section id="admin-panel" style="background:#101510;color:white;padding:20px;margin:20px;border:1px solid #fff;border-radius:12px;">
+  <h2>Administración ZONA 05</h2>
+  <p>Ingresa tu PIN para administrar los horarios.</p>
+
+  <input
+    id="admin-pin"
+    type="password"
+    inputmode="numeric"
+    maxlength="4"
+    placeholder="PIN de 4 dígitos"
+    style="padding:12px;width:90%;border-radius:8px;"
+  >
+
+  <button onclick="entrarAdmin()" style="padding:12px;margin-top:10px;">
+    Entrar
+  </button>
+
+  <p id="admin-message"></p>
+  <div id="admin-horarios"></div>
+</section>
+
+<script>
+async function entrarAdmin() {
+  const pin = document.getElementById("admin-pin").value;
+  const mensaje = document.getElementById("admin-message");
+  const lista = document.getElementById("admin-horarios");
+
+  if (!/^\d{4}$/.test(pin)) {
+    mensaje.textContent = "Escribe un PIN de 4 dígitos.";
+    return;
+  }
+
+  mensaje.textContent = "Cargando horarios...";
+
+  const { data, error } = await db
+    .from("Horarios")
+    .select("id,dia,hora,ocupado")
+    .order("id");
+
+  if (error) {
+    mensaje.textContent = "No se pudieron cargar los horarios.";
+    return;
+  }
+
+  mensaje.textContent = "Selecciona un horario para cambiar su estado.";
+  lista.innerHTML = "";
+
+  data.forEach(h => {
+    const fila = document.createElement("div");
+    fila.style.padding = "10px";
+    fila.style.borderBottom = "1px solid #555";
+
+    const texto = document.createElement("span");
+    texto.textContent = `${h.dia} - ${h.hora}:00 | ${h.ocupado ? "Ocupado" : "Disponible"} `;
+
+    const boton = document.createElement("button");
+    boton.textContent = h.ocupado ? "Liberar" : "Ocupar";
+    boton.style.margin = "5px";
+
+    boton.onclick = async () => {
+      boton.disabled = true;
+
+      const { error } = await window.db.functions.invoke(
+        "administrar-horarios",
+        {
+          body: {
+            pin,
+            id: h.id,
+            ocupado: !h.ocupado
+          }
+        }
+      );
+
+      if (error) {
+        mensaje.textContent = "No se pudo actualizar. Revisa el PIN.";
+        boton.disabled = false;
+        return;
+      }
+
+      mensaje.textContent = "Horario actualizado correctamente.";
+      entrarAdmin();
+    };
+
+    fila.appendChild(texto);
+    fila.appendChild(boton);
+    lista.appendChild(fila);
+  });
+}
+</script>
+</body>
+</html>
+
 </body>
 
 </html>
