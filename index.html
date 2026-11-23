@@ -320,7 +320,31 @@ box.appendChild(img);
 showDay(0);
 
 </script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
+<script>
+(async function() {
+  const SUPABASE_URL = "https://efmwmiyigbmvordpdoli.supabase.co";
+
+  const SUPABASE_KEY = const SUPABASE_KEY = sb_publishable_aUAT1DUgCFUGInzr8AgdVw_qMxxN2TJ
+
+  const db = window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+  );
+
+  const { data, error } = await db
+    .from("Horarios")
+    .select("dia,hora,ocupado");
+
+  if (error) {
+    console.error("Error:", error);
+    return;
+  }
+
+  console.log("Horarios conectados:", data);
+})();
+</script>
 </body>
 
 </html>
