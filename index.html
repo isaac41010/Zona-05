@@ -601,6 +601,7 @@ function mostrarAdmin() {
   });
 }
 
+
 async function cambiarHorario(h, button) {
   if (!adminActivo || !pinAdmin) {
     adminMessage.textContent = "Ingresa al panel primero.";
@@ -623,11 +624,70 @@ async function cambiarHorario(h, button) {
       });
 
     if (error) {
-      console.error("Error de la función:", error);
-      throw new Error(
-        "No se pudo conectar con la función de administración."
-      );
+      console.error("ERROR COMPLETO:", error);
+
+      let detalle = error.message;
+
+      if (error.context) {
+        try {
+          const respuesta = await error.context.clone().json();
+          detalle = respuesta.error || respuesta.message || JSON.stringify(respuesta);
+        } catch (e) {
+          detalle += " (HTTP " + error.context.status + ")";
+        }
+      }
+
+      throw new Error(detalle);
     }
+
+    if (!data || !data.success) {
+      throw new Error(data?.error || "La función no confirmó el cambio.");
+    }
+
+    adminMessage.textContent = "¡Horario actualizado!";
+    adminMessage.className = "status";
+
+    await cargarHorarios();
+
+  } catch (error) {
+    console.error("ERROR AL GUARDAR:", error);
+    adminMessage.textContent = "Error: " + error.message;
+    adminMessage.className = "error";
+
+  } finally {
+    button.disabled = false;
+  }
+}
+
+
+  button.disabled = true;
+  adminMessage.textContent = "Guardando cambio...";
+  adminMessage.className = "status";
+
+  try {
+    const { data, error } =
+      await window.db.functions.invoke(FUNCTION_NAME, {
+        body: {
+          pin: pinAdmin,
+          id: h.id,
+          ocupado: !h.ocupado
+        }
+      });
+
+   if (error) {
+  console.error("DETALLE DEL ERROR:", error);
+
+  let detalle = error.message;
+
+  if (error.context) {
+    try {
+      const respuesta = await error.context.json();
+      detalle = respuesta.message || respuesta.error || JSON.stringify(respuesta);
+    } catch (e) {}
+  }
+
+  throw new Error(detalle || "Error desconocido");
+}
 
     if (!data || !data.success) {
       throw new Error(
