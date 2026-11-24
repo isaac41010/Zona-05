@@ -4,232 +4,218 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101510">
 <title>ZONA 05 | Cancha deportiva</title>
 
 <style>
-* {
-  box-sizing: border-box;
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  background:#101510;
+  color:white;
+  font-family:Arial,sans-serif;
 }
 
-body {
-  margin: 0;
-  background: #101510;
-  color: white;
-  font-family: Arial, sans-serif;
+header{
+  background:#17251a;
+  padding:20px;
+  text-align:center;
+  border-bottom:2px solid #8bd34b;
 }
 
-header {
-  background: #17251a;
-  padding: 20px;
-  text-align: center;
-  border-bottom: 2px solid #8bd34b;
+header h1{
+  margin:0;
+  color:#a6e66c;
+  font-size:32px;
 }
 
-header h1 {
-  margin: 0;
-  color: #a6e66c;
-  font-size: 32px;
+header p{margin:7px 0 0}
+
+section{
+  padding:25px 16px;
+  max-width:1000px;
+  margin:auto;
 }
 
-header p {
-  margin: 7px 0 0;
+.hero{
+  text-align:center;
+  padding:35px 16px;
 }
 
-section {
-  padding: 25px 16px;
-  max-width: 1000px;
-  margin: auto;
+.hero img{
+  width:100%;
+  max-width:750px;
+  border-radius:15px;
+  margin-bottom:20px;
 }
 
-.hero {
-  text-align: center;
-  padding: 35px 16px;
+h2{
+  color:#a6e66c;
+  text-align:center;
 }
 
-.hero img {
-  width: 100%;
-  max-width: 750px;
-  border-radius: 15px;
-  margin-bottom: 20px;
+.hero h2{
+  font-size:30px;
+  margin-bottom:10px;
 }
 
-h2 {
-  color: #a6e66c;
-  text-align: center;
+p{line-height:1.5}
+
+.card{
+  background:#17251a;
+  border:1px solid #35513a;
+  border-radius:14px;
+  padding:18px;
+  margin:12px 0;
 }
 
-.hero h2 {
-  font-size: 30px;
-  margin-bottom: 10px;
+button{
+  background:#8bd34b;
+  color:#101510;
+  border:0;
+  border-radius:8px;
+  padding:12px 16px;
+  font-weight:bold;
+  cursor:pointer;
+  margin:4px;
 }
 
-p {
-  line-height: 1.5;
+button:hover{background:#a6e66c}
+
+button:disabled{
+  opacity:.5;
+  cursor:not-allowed;
 }
 
-.card {
-  background: #17251a;
-  border: 1px solid #35513a;
-  border-radius: 14px;
-  padding: 18px;
-  margin: 12px 0;
+input{
+  background:#101510;
+  color:white;
+  border:1px solid #8bd34b;
+  border-radius:8px;
+  padding:12px;
+  width:100%;
+  margin:8px 0;
 }
 
-button {
-  background: #8bd34b;
-  color: #101510;
-  border: none;
-  border-radius: 8px;
-  padding: 12px 16px;
-  font-weight: bold;
-  cursor: pointer;
-  margin: 4px;
+.days{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:5px;
 }
 
-button:hover {
-  background: #a6e66c;
+.day-button{min-width:90px}
+
+.day-button.active{
+  background:white;
+  color:#101510;
 }
 
-button:disabled {
-  opacity: .5;
-  cursor: not-allowed;
+.schedule{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(125px,1fr));
+  gap:10px;
+  margin-top:20px;
 }
 
-input {
-  background: #101510;
-  color: white;
-  border: 1px solid #8bd34b;
-  border-radius: 8px;
-  padding: 12px;
-  width: 100%;
-  margin: 8px 0;
+.slot{
+  padding:15px 8px;
+  border-radius:10px;
+  text-align:center;
+  font-weight:bold;
+  background:#263d29;
+  border:1px solid #527c43;
 }
 
-.days {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 5px;
+.slot.free{color:#a6e66c}
+
+.slot.busy{
+  color:#ff8b8b;
+  background:#402323;
+  border-color:#8b4141;
 }
 
-.day-button {
-  min-width: 90px;
+.slot button{
+  display:block;
+  width:100%;
+  margin:8px 0 0;
+  font-size:12px;
 }
 
-.day-button.active {
-  background: white;
-  color: #101510;
+.contact{
+  text-align:center;
+  margin:12px 0;
+  padding:15px;
+  background:#17251a;
+  border-radius:12px;
 }
 
-.schedule {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
-  gap: 10px;
-  margin-top: 20px;
+.whatsapp{
+  color:#a6e66c;
+  font-weight:bold;
+  text-decoration:none;
+  display:inline-block;
+  margin-top:8px;
 }
 
-.slot {
-  padding: 15px 8px;
-  border-radius: 10px;
-  text-align: center;
-  font-weight: bold;
-  background: #263d29;
-  border: 1px solid #527c43;
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:10px;
 }
 
-.slot.free {
-  color: #a6e66c;
+.gallery img{
+  width:100%;
+  border-radius:10px;
 }
 
-.slot.busy {
-  color: #ff8b8b;
-  background: #402323;
-  border-color: #8b4141;
+.admin{
+  border:1px solid #8bd34b;
+  border-radius:14px;
+  padding:18px;
+  background:#17251a;
 }
 
-.slot button {
-  display: block;
-  width: 100%;
-  margin: 8px 0 0;
-  font-size: 12px;
+.admin-list{margin-top:15px}
+
+.admin-item{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  padding:10px;
+  border-bottom:1px solid #35513a;
+  flex-wrap:wrap;
 }
 
-.contact {
-  text-align: center;
-  margin: 12px 0;
-  padding: 15px;
-  background: #17251a;
-  border-radius: 12px;
+.status{
+  color:#a6e66c;
+  font-size:14px;
+  text-align:center;
 }
 
-.whatsapp {
-  color: #a6e66c;
-  font-weight: bold;
-  text-decoration: none;
-  display: inline-block;
-  margin-top: 8px;
+.error{
+  color:#ff9999;
+  font-size:14px;
+  text-align:center;
 }
 
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 10px;
+footer{
+  background:#17251a;
+  text-align:center;
+  padding:25px;
+  margin-top:30px;
+  border-top:2px solid #8bd34b;
 }
 
-.gallery img {
-  width: 100%;
-  border-radius: 10px;
-}
+a{overflow-wrap:anywhere}
 
-.admin {
-  border: 1px solid #8bd34b;
-  border-radius: 14px;
-  padding: 18px;
-  background: #17251a;
-}
-
-.admin-list {
-  margin-top: 15px;
-}
-
-.admin-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-  padding: 10px;
-  border-bottom: 1px solid #35513a;
-  flex-wrap: wrap;
-}
-
-.status {
-  color: #a6e66c;
-  font-size: 14px;
-}
-
-.error {
-  color: #ff9999;
-}
-
-footer {
-  background: #17251a;
-  text-align: center;
-  padding: 25px;
-  margin-top: 30px;
-  border-top: 2px solid #8bd34b;
-}
-
-a {
-  overflow-wrap: anywhere;
-}
-
-@media(max-width: 500px) {
-  .hero h2 {
-    font-size: 25px;
-  }
-  .day-button {
-    min-width: 75px;
-    padding: 10px;
+@media(max-width:500px){
+  .hero h2{font-size:25px}
+  .day-button{
+    min-width:75px;
+    padding:10px;
   }
 }
 </style>
@@ -259,7 +245,7 @@ a {
 
   <div class="days" id="days"></div>
 
-  <div id="scheduleMessage" class="status" style="text-align:center">
+  <div id="scheduleMessage" class="status">
     Cargando horarios...
   </div>
 
@@ -299,27 +285,21 @@ a {
 
   <div class="contact">
     <b>WhatsApp principal</b><br>
-    <a class="whatsapp"
-       href="https://wa.me/50672295376"
-       target="_blank">
+    <a class="whatsapp" href="https://wa.me/50672295376" target="_blank">
       7229-5376
     </a>
   </div>
 
   <div class="contact">
     <b>Jeffry</b><br>
-    <a class="whatsapp"
-       href="https://wa.me/50688665592"
-       target="_blank">
+    <a class="whatsapp" href="https://wa.me/50688665592" target="_blank">
       8866-5592
     </a>
   </div>
 
   <div class="contact">
     <b>Fabiola</b><br>
-    <a class="whatsapp"
-       href="https://wa.me/50672358920"
-       target="_blank">
+    <a class="whatsapp" href="https://wa.me/50672358920" target="_blank">
       7235-8920
     </a>
   </div>
@@ -362,8 +342,12 @@ a {
       maxlength="4"
     >
 
-    <button onclick="entrarAdmin()">Entrar</button>
-    <button onclick="salirAdmin()" id="logoutButton" hidden>
+    <button id="loginButton" onclick="entrarAdmin()">Entrar</button>
+
+    <button
+      id="logoutButton"
+      onclick="salirAdmin()"
+      hidden>
       Cerrar sesión
     </button>
 
@@ -380,6 +364,10 @@ a {
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script>
+"use strict";
+
+/* CONFIGURACIÓN DE SUPABASE */
+
 const SUPABASE_URL =
   "https://efmwmiyigbmvordpdoli.supabase.co";
 
@@ -387,6 +375,8 @@ const SUPABASE_KEY =
   "sb_publishable_aUAT1DUgCFUGInzr8AgdVw_qMxxN2TJ";
 
 const FUNCTION_NAME = "smooth-endpoint";
+
+/* DÍAS Y ESTADO */
 
 const days = [
   "Lunes",
@@ -402,17 +392,50 @@ let selectedDay = "Lunes";
 let horarios = [];
 let adminActivo = false;
 let pinAdmin = "";
-
-window.db = window.supabase.createClient(
-  SUPABASE_URL,
-  SUPABASE_KEY
-);
+let guardando = false;
 
 const daysContainer = document.getElementById("days");
 const scheduleContainer = document.getElementById("schedule");
 const scheduleMessage = document.getElementById("scheduleMessage");
 const adminMessage = document.getElementById("adminMessage");
 const adminList = document.getElementById("adminList");
+const adminPinInput = document.getElementById("adminPin");
+
+/* CONEXIÓN */
+
+let db = null;
+
+try {
+  if (!window.supabase) {
+    throw new Error("No se pudo cargar la biblioteca de Supabase.");
+  }
+
+  db = window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+  );
+} catch (error) {
+  console.error(error);
+  scheduleMessage.textContent = error.message;
+  scheduleMessage.className = "error";
+}
+
+/* FUNCIONES GENERALES */
+
+function mostrarMensaje(elemento, mensaje, esError = false) {
+  elemento.textContent = mensaje;
+  elemento.className = esError ? "error" : "status";
+}
+
+function horaNumero(hora) {
+  return Number(String(hora).split(":")[0]);
+}
+
+function horaTexto(hora) {
+  return String(horaNumero(hora)).padStart(2, "0") + ":00";
+}
+
+/* BOTONES DE DÍAS */
 
 function crearDias() {
   daysContainer.innerHTML = "";
@@ -434,20 +457,32 @@ function crearDias() {
   });
 }
 
+/* MOSTRAR HORARIOS PÚBLICOS */
+
 function mostrarHorarios() {
   scheduleContainer.innerHTML = "";
 
   const delDia = horarios
     .filter(h => h.dia === selectedDay)
-    .sort((a, b) => Number(a.hora) - Number(b.hora));
+    .sort((a, b) => horaNumero(a.hora) - horaNumero(b.hora));
 
   if (!delDia.length) {
-    scheduleMessage.textContent =
-      "No hay horarios registrados para este día.";
+    if (horarios.length === 0) {
+      mostrarMensaje(
+        scheduleMessage,
+        "Todavía no hay horarios registrados.",
+        true
+      );
+    } else {
+      mostrarMensaje(
+        scheduleMessage,
+        "No hay horarios registrados para este día."
+      );
+    }
     return;
   }
 
-  scheduleMessage.textContent = "";
+  mostrarMensaje(scheduleMessage, "");
 
   delDia.forEach(h => {
     const ocupado = h.ocupado === true;
@@ -455,31 +490,34 @@ function mostrarHorarios() {
     const div = document.createElement("div");
     div.className = "slot " + (ocupado ? "busy" : "free");
 
-    const hora = Number(h.hora);
-    const horaTexto =
-      String(hora).padStart(2, "0") + ":00";
+    const hora = document.createElement("div");
+    hora.textContent = horaTexto(h.hora);
 
-    div.innerHTML = `
-      <div>${horaTexto}</div>
-      <div>${ocupado ? "OCUPADO" : "DISPONIBLE"}</div>
-    `;
+    const estado = document.createElement("div");
+    estado.textContent = ocupado ? "OCUPADO" : "DISPONIBLE";
+
+    div.appendChild(hora);
+    div.appendChild(estado);
 
     scheduleContainer.appendChild(div);
   });
 }
 
+/* CARGAR DATOS DE SUPABASE */
+
 async function cargarHorarios() {
-  scheduleMessage.textContent = "Cargando horarios...";
-  scheduleMessage.className = "status";
+  if (!db) return false;
+
+  mostrarMensaje(scheduleMessage, "Cargando horarios...");
 
   try {
-    const { data, error } = await window.db
+    const { data, error } = await db
       .from("Horarios")
       .select("id,dia,hora,ocupado");
 
     if (error) throw error;
 
-    horarios = data || [];
+    horarios = Array.isArray(data) ? data : [];
 
     mostrarHorarios();
 
@@ -487,31 +525,48 @@ async function cargarHorarios() {
       mostrarAdmin();
     }
 
+    return true;
+
   } catch (error) {
     console.error("Error al cargar horarios:", error);
 
-    scheduleMessage.textContent =
-      "No se pudieron cargar los horarios. Revisa la conexión con Supabase.";
+    horarios = [];
+    scheduleContainer.innerHTML = "";
 
-    scheduleMessage.className = "error";
+    mostrarMensaje(
+      scheduleMessage,
+      "No se pudieron cargar los horarios. Revisa la conexión y los permisos de Supabase.",
+      true
+    );
+
+    return false;
   }
 }
 
+/* VERIFICAR PIN */
 
 async function entrarAdmin() {
-  const pin = document.getElementById("adminPin").value.trim();
-
-  if (!/^\d{4}$/.test(pin)) {
-    adminMessage.textContent = "Escribe un PIN de cuatro dígitos.";
-    adminMessage.className = "error";
+  if (!db) {
+    mostrarMensaje(adminMessage, "No hay conexión con Supabase.", true);
     return;
   }
 
-  adminMessage.textContent = "Verificando PIN...";
-  adminMessage.className = "status";
+  const pin = adminPinInput.value.trim();
+
+  if (!/^\d{4}$/.test(pin)) {
+    mostrarMensaje(
+      adminMessage,
+      "Escribe un PIN de cuatro dígitos.",
+      true
+    );
+    return;
+  }
+
+  document.getElementById("loginButton").disabled = true;
+  mostrarMensaje(adminMessage, "Verificando PIN...");
 
   try {
-    const { data, error } = await window.db.functions.invoke(
+    const { data, error } = await db.functions.invoke(
       FUNCTION_NAME,
       {
         body: { pin: pin }
@@ -520,7 +575,7 @@ async function entrarAdmin() {
 
     if (error) {
       console.error("Error al verificar PIN:", error);
-      throw new Error("No se pudo conectar con la función.");
+      throw new Error(await detalleError(error));
     }
 
     if (!data || !data.success) {
@@ -530,37 +585,46 @@ async function entrarAdmin() {
     pinAdmin = pin;
     adminActivo = true;
 
+    adminPinInput.disabled = true;
+    document.getElementById("loginButton").hidden = true;
     document.getElementById("logoutButton").hidden = false;
-    document.getElementById("adminPin").disabled = true;
 
-    adminMessage.textContent = "¡Acceso autorizado!";
-    adminMessage.className = "status";
+    mostrarMensaje(adminMessage, "¡Acceso autorizado!");
 
     await cargarHorarios();
     mostrarAdmin();
 
   } catch (error) {
     console.error(error);
+
     adminActivo = false;
     pinAdmin = "";
-    adminMessage.textContent = error.message;
-    adminMessage.className = "error";
+
+    mostrarMensaje(adminMessage, error.message, true);
+
+  } finally {
+    document.getElementById("loginButton").disabled = false;
   }
 }
 
+/* CERRAR SESIÓN */
 
 function salirAdmin() {
   adminActivo = false;
   pinAdmin = "";
 
-  document.getElementById("adminPin").value = "";
-  document.getElementById("adminPin").disabled = false;
+  adminPinInput.value = "";
+  adminPinInput.disabled = false;
+
+  document.getElementById("loginButton").hidden = false;
   document.getElementById("logoutButton").hidden = true;
 
   adminList.innerHTML = "";
-  adminMessage.textContent = "Sesión cerrada.";
-  adminMessage.className = "status";
+
+  mostrarMensaje(adminMessage, "Sesión cerrada.");
 }
+
+/* MOSTRAR PANEL DE ADMINISTRACIÓN */
 
 function mostrarAdmin() {
   if (!adminActivo) return;
@@ -573,25 +637,28 @@ function mostrarAdmin() {
 
     if (diaA !== diaB) return diaA - diaB;
 
-    return Number(a.hora) - Number(b.hora);
+    return horaNumero(a.hora) - horaNumero(b.hora);
   });
+
+  if (!ordenados.length) {
+    const texto = document.createElement("p");
+    texto.textContent = "No hay horarios registrados para administrar.";
+    adminList.appendChild(texto);
+    return;
+  }
 
   ordenados.forEach(h => {
     const div = document.createElement("div");
     div.className = "admin-item";
 
-    const horaTexto =
-      String(Number(h.hora)).padStart(2, "0") + ":00";
-
     const texto = document.createElement("span");
     texto.textContent =
-      h.dia + " · " + horaTexto + " · " +
+      h.dia + " · " + horaTexto(h.hora) + " · " +
       (h.ocupado ? "Ocupado" : "Disponible");
 
     const button = document.createElement("button");
-    button.textContent =
-      h.ocupado ? "Liberar" : "Ocupar";
 
+    button.textContent = h.ocupado ? "Liberar" : "Ocupar";
     button.onclick = () => cambiarHorario(h, button);
 
     div.appendChild(texto);
@@ -601,117 +668,101 @@ function mostrarAdmin() {
   });
 }
 
+/* OBTENER DETALLE DE ERRORES */
+
+async function detalleError(error) {
+  let detalle = error?.message || "Error desconocido.";
+
+  if (error?.context && typeof error.context.clone === "function") {
+    try {
+      const respuesta = await error.context.clone().json();
+
+      detalle =
+        respuesta.error ||
+        respuesta.message ||
+        detalle;
+
+    } catch (e) {
+      if (error.context.status) {
+        detalle += " (HTTP " + error.context.status + ")";
+      }
+    }
+  }
+
+  return detalle;
+}
+
+/* CAMBIAR ESTADO DE UN HORARIO */
 
 async function cambiarHorario(h, button) {
   if (!adminActivo || !pinAdmin) {
-    adminMessage.textContent = "Ingresa al panel primero.";
-    adminMessage.className = "error";
+    mostrarMensaje(adminMessage, "Ingresa al panel primero.", true);
     return;
   }
 
+  if (guardando) return;
+
+  guardando = true;
   button.disabled = true;
-  adminMessage.textContent = "Guardando cambio...";
-  adminMessage.className = "status";
+
+  mostrarMensaje(adminMessage, "Guardando cambio...");
 
   try {
-    const { data, error } =
-      await window.db.functions.invoke(FUNCTION_NAME, {
+    const { data, error } = await db.functions.invoke(
+      FUNCTION_NAME,
+      {
         body: {
           pin: pinAdmin,
           id: h.id,
           ocupado: !h.ocupado
-        }
-      });
-
-    if (error) {
-      console.error("ERROR COMPLETO:", error);
-
-      let detalle = error.message;
-
-      if (error.context) {
-        try {
-          const respuesta = await error.context.clone().json();
-          detalle = respuesta.error || respuesta.message || JSON.stringify(respuesta);
-        } catch (e) {
-          detalle += " (HTTP " + error.context.status + ")";
         }
       }
+    );
 
-      throw new Error(detalle);
+    if (error) {
+      console.error("Error completo al guardar:", error);
+      throw new Error(await detalleError(error));
     }
-
-    if (!data || !data.success) {
-      throw new Error(data?.error || "La función no confirmó el cambio.");
-    }
-
-    adminMessage.textContent = "¡Horario actualizado!";
-    adminMessage.className = "status";
-
-    await cargarHorarios();
-
-  } catch (error) {
-    console.error("ERROR AL GUARDAR:", error);
-    adminMessage.textContent = "Error: " + error.message;
-    adminMessage.className = "error";
-
-  } finally {
-    button.disabled = false;
-  }
-}
-
-
-  button.disabled = true;
-  adminMessage.textContent = "Guardando cambio...";
-  adminMessage.className = "status";
-
-  try {
-    const { data, error } =
-      await window.db.functions.invoke(FUNCTION_NAME, {
-        body: {
-          pin: pinAdmin,
-          id: h.id,
-          ocupado: !h.ocupado
-        }
-      });
-
-   if (error) {
-  console.error("DETALLE DEL ERROR:", error);
-
-  let detalle = error.message;
-
-  if (error.context) {
-    try {
-      const respuesta = await error.context.json();
-      detalle = respuesta.message || respuesta.error || JSON.stringify(respuesta);
-    } catch (e) {}
-  }
-
-  throw new Error(detalle || "Error desconocido");
-}
 
     if (!data || !data.success) {
       throw new Error(
-        data?.error || "No se pudo actualizar el horario."
+        data?.error || "La función no confirmó el cambio."
       );
     }
 
-    adminMessage.textContent = "¡Horario actualizado correctamente!";
-    adminMessage.className = "status";
+    mostrarMensaje(adminMessage, "¡Horario actualizado correctamente!");
+
+    const actualizado = horarios.find(
+      item => String(item.id) === String(h.id)
+    );
+
+    if (actualizado) {
+      actualizado.ocupado = data.horario
+        ? data.horario.ocupado
+        : !h.ocupado;
+    }
+
+    mostrarHorarios();
+    mostrarAdmin();
 
     await cargarHorarios();
 
   } catch (error) {
     console.error("Error al modificar horario:", error);
 
-    adminMessage.textContent =
-      error.message || "No se pudo realizar la función. Revisa el PIN y la función.";
-
-    adminMessage.className = "error";
+    mostrarMensaje(
+      adminMessage,
+      "No se pudo guardar: " + error.message,
+      true
+    );
 
   } finally {
+    guardando = false;
     button.disabled = false;
   }
 }
+
+/* GALERÍA TEMPORAL */
 
 document.getElementById("photoInput").addEventListener(
   "change",
@@ -730,8 +781,11 @@ document.getElementById("photoInput").addEventListener(
   }
 );
 
+/* INICIAR PÁGINA */
+
 crearDias();
 cargarHorarios();
+
 </script>
 
 </body>
