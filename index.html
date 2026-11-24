@@ -497,29 +497,57 @@ async function cargarHorarios() {
   }
 }
 
+
 async function entrarAdmin() {
   const pin = document.getElementById("adminPin").value.trim();
 
   if (!/^\d{4}$/.test(pin)) {
-    adminMessage.textContent =
-      "Escribe un PIN de cuatro dígitos.";
+    adminMessage.textContent = "Escribe un PIN de cuatro dígitos.";
     adminMessage.className = "error";
     return;
   }
 
-  pinAdmin = pin;
-  adminActivo = true;
-
-  document.getElementById("logoutButton").hidden = false;
-  document.getElementById("adminPin").disabled = true;
-
-  adminMessage.textContent =
-    "Panel abierto. Puedes modificar los horarios.";
+  adminMessage.textContent = "Verificando PIN...";
   adminMessage.className = "status";
 
-  await cargarHorarios();
-  mostrarAdmin();
+  try {
+    const { data, error } = await window.db.functions.invoke(
+      FUNCTION_NAME,
+      {
+        body: { pin: pin }
+      }
+    );
+
+    if (error) {
+      console.error("Error al verificar PIN:", error);
+      throw new Error("No se pudo conectar con la función.");
+    }
+
+    if (!data || !data.success) {
+      throw new Error(data?.error || "PIN incorrecto.");
+    }
+
+    pinAdmin = pin;
+    adminActivo = true;
+
+    document.getElementById("logoutButton").hidden = false;
+    document.getElementById("adminPin").disabled = true;
+
+    adminMessage.textContent = "¡Acceso autorizado!";
+    adminMessage.className = "status";
+
+    await cargarHorarios();
+    mostrarAdmin();
+
+  } catch (error) {
+    console.error(error);
+    adminActivo = false;
+    pinAdmin = "";
+    adminMessage.textContent = error.message;
+    adminMessage.className = "error";
+  }
 }
+
 
 function salirAdmin() {
   adminActivo = false;
