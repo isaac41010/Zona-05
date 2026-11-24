@@ -4,789 +4,334 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#101510">
 <title>ZONA 05 | Cancha deportiva</title>
-
 <style>
 *{box-sizing:border-box}
-
-body{
-  margin:0;
-  background:#101510;
-  color:white;
-  font-family:Arial,sans-serif;
-}
-
-header{
-  background:#17251a;
-  padding:20px;
-  text-align:center;
-  border-bottom:2px solid #8bd34b;
-}
-
-header h1{
-  margin:0;
-  color:#a6e66c;
-  font-size:32px;
-}
-
-header p{margin:7px 0 0}
-
-section{
-  padding:25px 16px;
-  max-width:1000px;
-  margin:auto;
-}
-
-.hero{
-  text-align:center;
-  padding:35px 16px;
-}
-
-.hero img{
-  width:100%;
-  max-width:750px;
-  border-radius:15px;
-  margin-bottom:20px;
-}
-
-h2{
-  color:#a6e66c;
-  text-align:center;
-}
-
-.hero h2{
-  font-size:30px;
-  margin-bottom:10px;
-}
-
-p{line-height:1.5}
-
-.card{
-  background:#17251a;
-  border:1px solid #35513a;
-  border-radius:14px;
-  padding:18px;
-  margin:12px 0;
-}
-
-button{
-  background:#8bd34b;
-  color:#101510;
-  border:0;
-  border-radius:8px;
-  padding:12px 16px;
-  font-weight:bold;
-  cursor:pointer;
-  margin:4px;
-}
-
-button:hover{background:#a6e66c}
-
-button:disabled{
-  opacity:.5;
-  cursor:not-allowed;
-}
-
-input{
-  background:#101510;
-  color:white;
-  border:1px solid #8bd34b;
-  border-radius:8px;
-  padding:12px;
-  width:100%;
-  margin:8px 0;
-}
-
-.days{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:5px;
-}
-
-.day-button{min-width:90px}
-
-.day-button.active{
-  background:white;
-  color:#101510;
-}
-
-.schedule{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(125px,1fr));
-  gap:10px;
-  margin-top:20px;
-}
-
-.slot{
-  padding:15px 8px;
-  border-radius:10px;
-  text-align:center;
-  font-weight:bold;
-  background:#263d29;
-  border:1px solid #527c43;
-}
-
-.slot.free{color:#a6e66c}
-
-.slot.busy{
-  color:#ff8b8b;
-  background:#402323;
-  border-color:#8b4141;
-}
-
-.slot button{
-  display:block;
-  width:100%;
-  margin:8px 0 0;
-  font-size:12px;
-}
-
-.contact{
-  text-align:center;
-  margin:12px 0;
-  padding:15px;
-  background:#17251a;
-  border-radius:12px;
-}
-
-.whatsapp{
-  color:#a6e66c;
-  font-weight:bold;
-  text-decoration:none;
-  display:inline-block;
-  margin-top:8px;
-}
-
-.gallery{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
-  gap:10px;
-}
-
-.gallery img{
-  width:100%;
-  border-radius:10px;
-}
-
-.admin{
-  border:1px solid #8bd34b;
-  border-radius:14px;
-  padding:18px;
-  background:#17251a;
-}
-
-.admin-list{margin-top:15px}
-
-.admin-item{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:10px;
-  padding:10px;
-  border-bottom:1px solid #35513a;
-  flex-wrap:wrap;
-}
-
-.status{
-  color:#a6e66c;
-  font-size:14px;
-  text-align:center;
-}
-
-.error{
-  color:#ff9999;
-  font-size:14px;
-  text-align:center;
-}
-
-footer{
-  background:#17251a;
-  text-align:center;
-  padding:25px;
-  margin-top:30px;
-  border-top:2px solid #8bd34b;
-}
-
-a{overflow-wrap:anywhere}
-
-@media(max-width:500px){
-  .hero h2{font-size:25px}
-  .day-button{
-    min-width:75px;
-    padding:10px;
-  }
-}
+html{scroll-behavior:smooth}
+body{margin:0;background:#101510;color:white;font-family:Arial,sans-serif}
+header{background:#17251a;padding:18px;text-align:center;border-bottom:1px solid #344b35}
+.logo{font-size:30px;font-weight:bold;letter-spacing:4px}
+header p{margin:5px 0 0;color:#a6e66c}
+nav{display:flex;justify-content:center;flex-wrap:wrap;gap:18px;padding:14px;background:#111a13}
+nav a{color:white;text-decoration:none;font-size:14px}
+nav a:hover{color:#a6e66c}
+.hero{min-height:390px;display:flex;align-items:center;justify-content:center;text-align:center;padding:35px 20px;background:linear-gradient(#0009,#000b),url('./84f7d49c-7746-4c53-866d-25fa2d099216.jpeg') center/cover}
+.hero h1{font-size:36px;margin:0 0 15px}
+.hero p{font-size:17px;line-height:1.6}
+.btn{display:inline-block;background:#8bd34b;color:#101510;padding:12px 20px;border-radius:8px;text-decoration:none;font-weight:bold;border:0;cursor:pointer}
+section{padding:35px 18px;max-width:1000px;margin:auto}
+h2{text-align:center;color:#a6e66c;margin-top:0}
+.sub{text-align:center;color:#ccc;line-height:1.5}
+.card{background:#19221b;border:1px solid #344b35;border-radius:12px;padding:18px;margin:15px 0}
+.days{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:20px 0}
+.daybtn{background:#263329;color:white;border:1px solid #50634e;padding:10px 14px;border-radius:7px;cursor:pointer}
+.daybtn.active{background:#8bd34b;color:#101510;font-weight:bold}
+.schedule{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px}
+.slot{background:#263329;border:1px solid #50634e;padding:13px 8px;border-radius:8px;text-align:center}
+.slot strong{display:block;margin-bottom:8px}
+.open{color:#a6e66c;font-weight:bold}
+.busy{color:#ff7777;font-weight:bold}
+.prices{text-align:center;font-size:18px;line-height:2}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px}
+.gallery img{width:100%;border-radius:9px}
+.contact{text-align:center;line-height:2}
+.contact a{color:#a6e66c;text-decoration:none}
+footer{text-align:center;padding:25px;background:#17251a;color:#ccc}
+input{width:100%;padding:12px;border-radius:7px;border:1px solid #50634e;background:#101510;color:white;margin:7px 0 12px}
+.admin-list{display:grid;gap:9px}
+.admin-row{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;background:#263329;padding:12px;border-radius:8px}
+.admin-row button{padding:9px;border:0;border-radius:6px;cursor:pointer;font-weight:bold}
+.admin-row .toggle{background:#8bd34b;color:#101510}
+.hidden{display:none}
+.notice{text-align:center;color:#a6e66c;margin:12px 0}
+.error{color:#ff8888}
+button:disabled{opacity:.5;cursor:wait}
 </style>
 </head>
-
 <body>
 
 <header>
-  <h1>ZONA 05</h1>
-  <p>Tu espacio para jugar</p>
+ <div class="logo">ZONA 05</div>
+ <p>Tu espacio para jugar</p>
 </header>
 
-<section class="hero">
-  <img
-    src="./84f7d49c-7746-4c53-866d-25fa2d099216.jpeg"
-    alt="Cancha deportiva ZONA 05"
-  >
-  <h2>Vive el fútbol en ZONA 05</h2>
+<nav>
+ <a href="#horarios">Horarios</a>
+ <a href="#precios">Precios</a>
+ <a href="#galeria">Galería</a>
+ <a href="#contacto">Contacto</a>
+ <a href="#ubicacion">Ubicación</a>
+</nav>
+
+<div class="hero">
+ <div>
+  <h1>Vive el fútbol en ZONA 05</h1>
   <p>Reserva tu espacio y disfruta del deporte de la mejor manera.</p>
+  <a class="btn" href="#horarios">Ver horarios</a>
+ </div>
+</div>
+
+<section id="horarios">
+ <h2>Horarios disponibles</h2>
+ <p class="sub">Consulta los espacios disponibles y organiza tu partido.</p>
+ <div class="days" id="dias"></div>
+ <div class="schedule" id="listaHorarios">
+  <p class="sub">Cargando horarios...</p>
+ </div>
+ <p class="notice" id="estadoCarga"></p>
 </section>
 
-<section>
-  <h2>Horarios disponibles</h2>
-  <p style="text-align:center">
-    Consulta los espacios disponibles para jugar.
-  </p>
-
-  <div class="days" id="days"></div>
-
-  <div id="scheduleMessage" class="status">
-    Cargando horarios...
-  </div>
-
-  <div class="schedule" id="schedule"></div>
+<section id="precios">
+ <h2>Nuestros precios</h2>
+ <div class="card prices">
+  <div>⚽ Alquiler de cancha: <strong>₡15.000 por hora</strong></div>
+  <div>👟 Alquiler de tenis: <strong>₡500 por persona</strong></div>
+  <div>🚫 No se permite jugar con tacos.</div>
+ </div>
 </section>
 
-<section>
-  <h2>Nuestras tarifas</h2>
-
-  <div class="card">
-    <h3>Alquiler de cancha</h3>
-    <p>₡15.000 por hora</p>
-  </div>
-
-  <div class="card">
-    <h3>Alquiler de tenis</h3>
-    <p>₡500 por persona</p>
-    <p>No se permite jugar con tacos.</p>
-  </div>
+<section id="galeria">
+ <h2>Galería</h2>
+ <p class="sub">Conoce nuestro espacio deportivo.</p>
+ <div class="gallery">
+  <img src="./84f7d49c-7746-4c53-866d-25fa2d099216.jpeg" alt="Zona 05">
+ </div>
 </section>
 
-<section>
-  <h2>Nuestra galería</h2>
-  <p style="text-align:center">
-    Comparte y disfruta los momentos de ZONA 05.
-  </p>
-
-  <input type="file" id="photoInput" accept="image/*" multiple>
-  <div class="gallery" id="gallery"></div>
+<section id="contacto">
+ <h2>Contáctanos</h2>
+ <div class="card contact">
+  <p>WhatsApp principal: <a href="https://wa.me/50672295376">7229-5376</a></p>
+  <p>Jeffry: <a href="https://wa.me/50688665592">8866-5592</a></p>
+  <p>Fabiola: <a href="https://wa.me/50672358920">7235-8920</a></p>
+  <p>Instagram: <a href="https://www.instagram.com/z5_futbol?cnvx=N3dldWM1YzlkMDAz" target="_blank">@z5_futbol</a></p>
+ </div>
 </section>
 
-<section>
-  <h2>Reserva con nosotros</h2>
-  <p style="text-align:center">
-    Para reservar, comunícate con cualquiera de nuestros contactos.
-  </p>
-
-  <div class="contact">
-    <b>WhatsApp principal</b><br>
-    <a class="whatsapp" href="https://wa.me/50672295376" target="_blank">
-      7229-5376
-    </a>
-  </div>
-
-  <div class="contact">
-    <b>Jeffry</b><br>
-    <a class="whatsapp" href="https://wa.me/50688665592" target="_blank">
-      8866-5592
-    </a>
-  </div>
-
-  <div class="contact">
-    <b>Fabiola</b><br>
-    <a class="whatsapp" href="https://wa.me/50672358920" target="_blank">
-      7235-8920
-    </a>
-  </div>
+<section id="ubicacion">
+ <h2>¿Dónde estamos?</h2>
+ <div class="card contact">
+  <p>Visítanos y disfruta del fútbol en ZONA 05.</p>
+  <a class="btn" href="https://maps.apple/p/KI5ZBJTjZ.M5Xj" target="_blank">Ver ubicación</a>
+ </div>
 </section>
 
-<section>
-  <h2>Ubicación</h2>
-  <div class="card" style="text-align:center">
-    <p>Encuéntranos y ven a disfrutar del fútbol.</p>
-    <a class="whatsapp"
-       href="https://maps.apple/p/KI5ZBJTjZ.M5Xj"
-       target="_blank">
-      Ver ubicación de ZONA 05
-    </a>
+<section id="administracion">
+ <h2>Administración</h2>
+ <div class="card">
+  <div id="loginAdmin">
+   <p class="sub">Ingresa tu PIN para administrar los horarios.</p>
+   <label for="pin">PIN de administrador</label>
+   <input id="pin" type="password" inputmode="numeric" maxlength="4" placeholder="PIN de 4 dígitos">
+   <button class="btn" id="entrar">Ingresar</button>
+   <p id="mensajeLogin" class="notice"></p>
   </div>
-</section>
-
-<section>
-  <h2>Síguenos</h2>
-  <div class="contact">
-    <a class="whatsapp"
-       href="https://www.instagram.com/z5_futbol?cnvx=N3dldWM1YzlkMDAz"
-       target="_blank">
-      Instagram @z5_futbol
-    </a>
+  <div id="panelAdmin" class="hidden">
+   <p class="notice">Panel de administración activo</p>
+   <div class="admin-list" id="adminLista"></div>
+   <p id="mensajeAdmin" class="notice"></p>
+   <button class="btn" id="salir">Cerrar sesión</button>
   </div>
-</section>
-
-<section>
-  <h2>Administración de horarios</h2>
-
-  <div class="admin">
-    <p>Ingresa tu PIN para administrar los horarios.</p>
-
-    <input
-      type="password"
-      id="adminPin"
-      placeholder="PIN de administración"
-      inputmode="numeric"
-      maxlength="4"
-    >
-
-    <button id="loginButton" onclick="entrarAdmin()">Entrar</button>
-
-    <button
-      id="logoutButton"
-      onclick="salirAdmin()"
-      hidden>
-      Cerrar sesión
-    </button>
-
-    <p id="adminMessage" class="status"></p>
-    <div id="adminList" class="admin-list"></div>
-  </div>
+ </div>
 </section>
 
 <footer>
-  <h2>ZONA 05</h2>
-  <p>¡Nos vemos en la cancha!</p>
+ <strong>ZONA 05</strong>
+ <p>¡Nos vemos en la cancha!</p>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
 <script>
-"use strict";
+const API_URL = "https://script.google.com/macros/s/AKfycbxsnpV6M0N9aWJsJOTaowTMJLONh06R_VJIwNT8JZTwzBTgniTHFBECtG9D25kJxKVqIg/exec";
 
-/* CONFIGURACIÓN DE SUPABASE */
-
-const SUPABASE_URL =
-  "https://efmwmiyigbmvordpdoli.supabase.co";
-
-const SUPABASE_KEY =
-  "sb_publishable_aUAT1DUgCFUGInzr8AgdVw_qMxxN2TJ";
-
-const FUNCTION_NAME = "smooth-endpoint";
-
-/* DÍAS Y ESTADO */
-
-const days = [
-  "Lunes",
-  "Martes",
-  "Miércoles",
-  "Jueves",
-  "Viernes",
-  "Sábado",
-  "Domingo"
-];
-
-let selectedDay = "Lunes";
+const DIAS = ["Lunes","Martes","Miércoles","Jueves","Viernes","Sábado","Domingo"];
 let horarios = [];
-let adminActivo = false;
-let pinAdmin = "";
-let guardando = false;
+let diaSeleccionado = "Lunes";
+let pinActivo = null;
 
-const daysContainer = document.getElementById("days");
-const scheduleContainer = document.getElementById("schedule");
-const scheduleMessage = document.getElementById("scheduleMessage");
-const adminMessage = document.getElementById("adminMessage");
-const adminList = document.getElementById("adminList");
-const adminPinInput = document.getElementById("adminPin");
+function jsonp(params){
+ return new Promise((resolve,reject)=>{
+  const callback = "zona05_callback_" + Date.now() + "_" + Math.floor(Math.random()*1000000);
+  const script = document.createElement("script");
+  const datos = new URLSearchParams({...params,callback});
+  let terminado = false;
+  let temporizador;
 
-/* CONEXIÓN */
+  const limpiar = ()=>{
+   if(terminado)return;
+   terminado = true;
+   clearTimeout(temporizador);
+   delete window[callback];
+   script.remove();
+  };
 
-let db = null;
+  window[callback] = (respuesta)=>{
+   limpiar();
+   resolve(respuesta);
+  };
 
-try {
-  if (!window.supabase) {
-    throw new Error("No se pudo cargar la biblioteca de Supabase.");
-  }
+  script.onerror = ()=>{
+   limpiar();
+   reject(new Error("No se pudo conectar con Google Sheets."));
+  };
 
-  db = window.supabase.createClient(
-    SUPABASE_URL,
-    SUPABASE_KEY
-  );
-} catch (error) {
-  console.error(error);
-  scheduleMessage.textContent = error.message;
-  scheduleMessage.className = "error";
+  temporizador = setTimeout(()=>{
+   limpiar();
+   reject(new Error("La conexión tardó demasiado. Intenta nuevamente."));
+  },15000);
+
+  script.src = API_URL + "?" + datos.toString();
+  document.body.appendChild(script);
+ });
 }
 
-/* FUNCIONES GENERALES */
-
-function mostrarMensaje(elemento, mensaje, esError = false) {
-  elemento.textContent = mensaje;
-  elemento.className = esError ? "error" : "status";
+function mostrarMensaje(elemento,texto,error=false){
+ elemento.textContent = texto;
+ elemento.className = error ? "notice error" : "notice";
 }
 
-function horaNumero(hora) {
-  return Number(String(hora).split(":")[0]);
+function horaTexto(hora){
+ return String(hora || "").trim();
 }
 
-function horaTexto(hora) {
-  return String(horaNumero(hora)).padStart(2, "0") + ":00";
+function ordenarHorarios(lista){
+ return lista.slice().sort((a,b)=>{
+  const da = DIAS.indexOf(a.dia);
+  const db = DIAS.indexOf(b.dia);
+  if(da !== db)return da-db;
+  return horaTexto(a.hora).localeCompare(horaTexto(b.hora));
+ });
 }
 
-/* BOTONES DE DÍAS */
+function dibujarDias(){
+ const contenedor = document.getElementById("dias");
+ contenedor.innerHTML = "";
+ DIAS.forEach(dia=>{
+  const boton = document.createElement("button");
+  boton.className = "daybtn" + (dia === diaSeleccionado ? " active" : "");
+  boton.textContent = dia;
+  boton.onclick = ()=>{
+   diaSeleccionado = dia;
+   dibujarDias();
+   dibujarHorarios();
+  };
+  contenedor.appendChild(boton);
+ });
+}
 
-function crearDias() {
-  daysContainer.innerHTML = "";
+function dibujarHorarios(){
+ const contenedor = document.getElementById("listaHorarios");
+ contenedor.innerHTML = "";
+ const delDia = horarios.filter(h=>h.dia === diaSeleccionado);
 
-  days.forEach(dia => {
-    const button = document.createElement("button");
+ if(!delDia.length){
+  contenedor.innerHTML = '<p class="sub">No hay horarios disponibles para este día.</p>';
+  return;
+ }
 
-    button.textContent = dia;
-    button.className =
-      "day-button" + (dia === selectedDay ? " active" : "");
+ delDia.forEach(h=>{
+  const tarjeta = document.createElement("div");
+  tarjeta.className = "slot";
+  const hora = document.createElement("strong");
+  hora.textContent = horaTexto(h.hora);
+  const estado = document.createElement("span");
+  estado.className = h.ocupado ? "busy" : "open";
+  estado.textContent = h.ocupado ? "OCUPADO" : "DISPONIBLE";
+  tarjeta.append(hora,estado);
+  contenedor.appendChild(tarjeta);
+ });
+}
 
-    button.onclick = () => {
-      selectedDay = dia;
-      crearDias();
-      mostrarHorarios();
-    };
+async function cargarHorarios(){
+ const estado = document.getElementById("estadoCarga");
+ mostrarMensaje(estado,"Actualizando horarios...");
+ try{
+  const respuesta = await jsonp({action:"list"});
+  if(!respuesta.success)throw new Error(respuesta.error || "No se pudieron cargar los horarios.");
+  horarios = ordenarHorarios(respuesta.horarios || []);
+  dibujarDias();
+  dibujarHorarios();
+  mostrarMensaje(estado,"Horarios actualizados.");
+ }catch(error){
+  mostrarMensaje(estado,error.message,true);
+  document.getElementById("listaHorarios").innerHTML =
+   '<p class="sub">No fue posible cargar los horarios. Intenta recargar la página.</p>';
+ }
+}
 
-    daysContainer.appendChild(button);
+function dibujarAdmin(){
+ const lista = document.getElementById("adminLista");
+ lista.innerHTML = "";
+ ordenarHorarios(horarios).forEach(h=>{
+  const fila = document.createElement("div");
+  fila.className = "admin-row";
+  const texto = document.createElement("span");
+  texto.textContent = h.dia + " · " + horaTexto(h.hora) + " · " + (h.ocupado ? "Ocupado" : "Disponible");
+  const boton = document.createElement("button");
+  boton.className = "toggle";
+  boton.textContent = h.ocupado ? "Marcar disponible" : "Marcar ocupado";
+  boton.onclick = ()=>cambiarEstado(h,boton);
+  fila.append(texto,boton);
+  lista.appendChild(fila);
+ });
+}
+
+async function cambiarEstado(h,boton){
+ const mensaje = document.getElementById("mensajeAdmin");
+ boton.disabled = true;
+ mostrarMensaje(mensaje,"Guardando cambio...");
+ try{
+  const nuevoEstado = !h.ocupado;
+  const respuesta = await jsonp({
+   action:"update",
+   pin:pinActivo,
+   row:String(h.row),
+   ocupado:String(nuevoEstado)
   });
+  if(!respuesta.success)throw new Error(respuesta.error || "No se pudo guardar el cambio.");
+  await cargarHorarios();
+  dibujarAdmin();
+  mostrarMensaje(mensaje,"¡Horario actualizado correctamente!");
+ }catch(error){
+  mostrarMensaje(mensaje,error.message,true);
+ }finally{
+  boton.disabled = false;
+ }
 }
 
-/* MOSTRAR HORARIOS PÚBLICOS */
+document.getElementById("entrar").onclick = async ()=>{
+ const pin = document.getElementById("pin").value.trim();
+ const mensaje = document.getElementById("mensajeLogin");
+ if(!pin){
+  mostrarMensaje(mensaje,"Escribe el PIN.",true);
+  return;
+ }
+ const boton = document.getElementById("entrar");
+ boton.disabled = true;
+ mostrarMensaje(mensaje,"Verificando PIN...");
+ try{
+  const respuesta = await jsonp({action:"verify",pin});
+  if(!respuesta.success)throw new Error("PIN incorrecto.");
+  pinActivo = pin;
+  document.getElementById("loginAdmin").classList.add("hidden");
+  document.getElementById("panelAdmin").classList.remove("hidden");
+  document.getElementById("pin").value = "";
+  dibujarAdmin();
+ }catch(error){
+  mostrarMensaje(mensaje,error.message,true);
+ }finally{
+  boton.disabled = false;
+ }
+};
+
+document.getElementById("salir").onclick = ()=>{
+ pinActivo = null;
+ document.getElementById("panelAdmin").classList.add("hidden");
+ document.getElementById("loginAdmin").classList.remove("hidden");
+ document.getElementById("mensajeLogin").textContent = "";
+};
 
-function mostrarHorarios() {
-  scheduleContainer.innerHTML = "";
-
-  const delDia = horarios
-    .filter(h => h.dia === selectedDay)
-    .sort((a, b) => horaNumero(a.hora) - horaNumero(b.hora));
-
-  if (!delDia.length) {
-    if (horarios.length === 0) {
-      mostrarMensaje(
-        scheduleMessage,
-        "Todavía no hay horarios registrados.",
-        true
-      );
-    } else {
-      mostrarMensaje(
-        scheduleMessage,
-        "No hay horarios registrados para este día."
-      );
-    }
-    return;
-  }
-
-  mostrarMensaje(scheduleMessage, "");
-
-  delDia.forEach(h => {
-    const ocupado = h.ocupado === true;
-
-    const div = document.createElement("div");
-    div.className = "slot " + (ocupado ? "busy" : "free");
-
-    const hora = document.createElement("div");
-    hora.textContent = horaTexto(h.hora);
-
-    const estado = document.createElement("div");
-    estado.textContent = ocupado ? "OCUPADO" : "DISPONIBLE";
-
-    div.appendChild(hora);
-    div.appendChild(estado);
-
-    scheduleContainer.appendChild(div);
-  });
-}
-
-/* CARGAR DATOS DE SUPABASE */
-
-async function cargarHorarios() {
-  if (!db) return false;
-
-  mostrarMensaje(scheduleMessage, "Cargando horarios...");
-
-  try {
-    const { data, error } = await db
-      .from("Horarios")
-      .select("id,dia,hora,ocupado");
-
-    if (error) throw error;
-
-    horarios = Array.isArray(data) ? data : [];
-
-    mostrarHorarios();
-
-    if (adminActivo) {
-      mostrarAdmin();
-    }
-
-    return true;
-
-  } catch (error) {
-    console.error("Error al cargar horarios:", error);
-
-    horarios = [];
-    scheduleContainer.innerHTML = "";
-
-    mostrarMensaje(
-      scheduleMessage,
-      "No se pudieron cargar los horarios. Revisa la conexión y los permisos de Supabase.",
-      true
-    );
-
-    return false;
-  }
-}
-
-/* VERIFICAR PIN */
-
-async function entrarAdmin() {
-  if (!db) {
-    mostrarMensaje(adminMessage, "No hay conexión con Supabase.", true);
-    return;
-  }
-
-  const pin = adminPinInput.value.trim();
-
-  if (!/^\d{4}$/.test(pin)) {
-    mostrarMensaje(
-      adminMessage,
-      "Escribe un PIN de cuatro dígitos.",
-      true
-    );
-    return;
-  }
-
-  document.getElementById("loginButton").disabled = true;
-  mostrarMensaje(adminMessage, "Verificando PIN...");
-
-  try {
-    const { data, error } = await db.functions.invoke(
-      FUNCTION_NAME,
-      {
-        body: { pin: pin }
-      }
-    );
-
-    if (error) {
-      console.error("Error al verificar PIN:", error);
-      throw new Error(await detalleError(error));
-    }
-
-    if (!data || !data.success) {
-      throw new Error(data?.error || "PIN incorrecto.");
-    }
-
-    pinAdmin = pin;
-    adminActivo = true;
-
-    adminPinInput.disabled = true;
-    document.getElementById("loginButton").hidden = true;
-    document.getElementById("logoutButton").hidden = false;
-
-    mostrarMensaje(adminMessage, "¡Acceso autorizado!");
-
-    await cargarHorarios();
-    mostrarAdmin();
-
-  } catch (error) {
-    console.error(error);
-
-    adminActivo = false;
-    pinAdmin = "";
-
-    mostrarMensaje(adminMessage, error.message, true);
-
-  } finally {
-    document.getElementById("loginButton").disabled = false;
-  }
-}
-
-/* CERRAR SESIÓN */
-
-function salirAdmin() {
-  adminActivo = false;
-  pinAdmin = "";
-
-  adminPinInput.value = "";
-  adminPinInput.disabled = false;
-
-  document.getElementById("loginButton").hidden = false;
-  document.getElementById("logoutButton").hidden = true;
-
-  adminList.innerHTML = "";
-
-  mostrarMensaje(adminMessage, "Sesión cerrada.");
-}
-
-/* MOSTRAR PANEL DE ADMINISTRACIÓN */
-
-function mostrarAdmin() {
-  if (!adminActivo) return;
-
-  adminList.innerHTML = "";
-
-  const ordenados = [...horarios].sort((a, b) => {
-    const diaA = days.indexOf(a.dia);
-    const diaB = days.indexOf(b.dia);
-
-    if (diaA !== diaB) return diaA - diaB;
-
-    return horaNumero(a.hora) - horaNumero(b.hora);
-  });
-
-  if (!ordenados.length) {
-    const texto = document.createElement("p");
-    texto.textContent = "No hay horarios registrados para administrar.";
-    adminList.appendChild(texto);
-    return;
-  }
-
-  ordenados.forEach(h => {
-    const div = document.createElement("div");
-    div.className = "admin-item";
-
-    const texto = document.createElement("span");
-    texto.textContent =
-      h.dia + " · " + horaTexto(h.hora) + " · " +
-      (h.ocupado ? "Ocupado" : "Disponible");
-
-    const button = document.createElement("button");
-
-    button.textContent = h.ocupado ? "Liberar" : "Ocupar";
-    button.onclick = () => cambiarHorario(h, button);
-
-    div.appendChild(texto);
-    div.appendChild(button);
-
-    adminList.appendChild(div);
-  });
-}
-
-/* OBTENER DETALLE DE ERRORES */
-
-async function detalleError(error) {
-  let detalle = error?.message || "Error desconocido.";
-
-  if (error?.context && typeof error.context.clone === "function") {
-    try {
-      const respuesta = await error.context.clone().json();
-
-      detalle =
-        respuesta.error ||
-        respuesta.message ||
-        detalle;
-
-    } catch (e) {
-      if (error.context.status) {
-        detalle += " (HTTP " + error.context.status + ")";
-      }
-    }
-  }
-
-  return detalle;
-}
-
-/* CAMBIAR ESTADO DE UN HORARIO */
-
-async function cambiarHorario(h, button) {
-  if (!adminActivo || !pinAdmin) {
-    mostrarMensaje(adminMessage, "Ingresa al panel primero.", true);
-    return;
-  }
-
-  if (guardando) return;
-
-  guardando = true;
-  button.disabled = true;
-
-  mostrarMensaje(adminMessage, "Guardando cambio...");
-
-  try {
-    const { data, error } = await db.functions.invoke(
-      FUNCTION_NAME,
-      {
-        body: {
-          pin: pinAdmin,
-          id: h.id,
-          ocupado: !h.ocupado
-        }
-      }
-    );
-
-    if (error) {
-      console.error("Error completo al guardar:", error);
-      throw new Error(await detalleError(error));
-    }
-
-    if (!data || !data.success) {
-      throw new Error(
-        data?.error || "La función no confirmó el cambio."
-      );
-    }
-
-    mostrarMensaje(adminMessage, "¡Horario actualizado correctamente!");
-
-    const actualizado = horarios.find(
-      item => String(item.id) === String(h.id)
-    );
-
-    if (actualizado) {
-      actualizado.ocupado = data.horario
-        ? data.horario.ocupado
-        : !h.ocupado;
-    }
-
-    mostrarHorarios();
-    mostrarAdmin();
-
-    await cargarHorarios();
-
-  } catch (error) {
-    console.error("Error al modificar horario:", error);
-
-    mostrarMensaje(
-      adminMessage,
-      "No se pudo guardar: " + error.message,
-      true
-    );
-
-  } finally {
-    guardando = false;
-    button.disabled = false;
-  }
-}
-
-/* GALERÍA TEMPORAL */
-
-document.getElementById("photoInput").addEventListener(
-  "change",
-  function(event) {
-    const gallery = document.getElementById("gallery");
-
-    Array.from(event.target.files).forEach(file => {
-      if (!file.type.startsWith("image/")) return;
-
-      const image = document.createElement("img");
-      image.src = URL.createObjectURL(file);
-      image.alt = "Foto de ZONA 05";
-
-      gallery.appendChild(image);
-    });
-  }
-);
-
-/* INICIAR PÁGINA */
-
-crearDias();
 cargarHorarios();
-
 </script>
-
 </body>
 </html>
+
